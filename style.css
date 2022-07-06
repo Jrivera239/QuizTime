@@ -1,0 +1,111 @@
+* {
+    padding:.1px;
+    margin:.1px;
+    box-sizing: border-box;
+    font-family:"Poppins",sans-serif;
+
+
+}
+body{
+    background-color: rgba(6, 1, 100, 0.871);
+}
+.start-screen, .score-container{
+    position:absolute;
+    top:20px;
+    left: 20px;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.header{
+    margin-bottom: 1.7em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom:.6em;
+    border-bottom: .1em solid rgba(223, 208, 208, 0.687);
+    
+
+}
+
+#next-button {
+    border: none;
+    outline: none;  
+    cursor: pointer;
+
+}
+
+#start-button, #Restart {
+    font-size: 1.1em;
+    border-right: 1em;
+    padding:.5em 1.3em;
+    cursor: pointer;
+    color: black;
+    background-color: aquamarine;
+    border-radius: .7em;
+    font-weight: bold;
+
+}
+#display-container{
+    background-color: aliceblue;
+    padding: 3em 1.7em;
+    width:75%;
+    max-width: 37em;
+    margin: 0;  
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top:50%;
+    left:50%;
+    border-radius: 0.6em;
+
+}
+.timer-div{
+    background-color: aquamarine;
+    width: 5.5em;
+    border-radius: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .3em 1em
+}
+#next-button {
+    font-size:1em ;
+    margin-top: 1.5em;
+    background-color: aquamarine;
+    color: black;
+    padding: .6em 1.3em;
+    border-radius: .8em;
+    float:right;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+ 
+}
+.hide{
+    display: none;
+}
+#User-Score{
+    font-size: 1.3em;
+    color:aquamarine;
+}
+
+ 
+.popquiz{
+    color:aquamarine;
+    font-size: 2em;
+    padding-right:5px;
+    padding: 10px;
+    font-weight: bold;
+    
+}
+.number-of-question{
+    color: aquamarine;
+    padding: 11px;
+    font-size: 1.3em;
+
+}
