@@ -13,7 +13,7 @@ let questionCount;
 let scoreCount = 0;
 let count = 15;
 let countdown;
-
+const TimerEl = document.getElementById("Timer");
 //Questions and Options array//
 
 const quizArray = [
@@ -30,6 +30,11 @@ const quizArray = [
     id: "3",
  question:"What happened to Dinosaurs?" ,
  options:["They playing hide and seek", "They were extinct","Starve to death","T-Rex ate them all"], correct:"They were extint",
+},
+{
+    id: "4",
+ question:"Where is air come from?" ,
+ options:["Animals", "humans","Trees","water"], correct:"Trees",
 },
 ];
 
@@ -92,23 +97,34 @@ const quizDisplay = (questionCount) => {
 
 //Quiz Creation//
 function quizCreator() {
+
   //randomly sort questions//
   quizArray.sort(() => Math.random() - 0.5);
+
   //generate quiz//
   for (let i of quizArray) {
+
     //randomly sort options//
     i.options.sort(() => Math.random() - 0.5);
+
     //quiz card creation//
     let div = document.createElement("div");
     div.classList.add("container-mid", "hide");
+
     //question number//
     countOfQuestion.innerHTML = 1 + " of " + quizArray.length + " Question";
+
     //question//
     let question_DIV = document.createElement("p");
     question_DIV.classList.add("question");
     question_DIV.innerHTML = i.question;
     div.appendChild(question_DIV);
-    //options//
+
+    // score //
+    const SCORE_POINTS = 100
+    const MAX_QUESTIONS = 3
+
+    // options //
     div.innerHTML += `
     <button class="option-div" onclick="checker(this)">${i.options[0]}</button>
      <button class="option-div" onclick="checker(this)">${i.options[1]}</button>
@@ -119,14 +135,14 @@ function quizCreator() {
   }
 }
 
-//Checker Function to check if option is correct or not//
+// Checker Function to check if option is correct or not //
 function checker(userOption) {
   let userSolution = userOption.innerText;
   let question =
     document.getElementsByClassName("container-mid")[questionCount];
   let options = question.querySelectorAll(".option-div");
 
-  //if user clicked answer == correct option stored in object//
+  // if user clicked answer == correct option stored in object//
   if (userSolution === quizArray[questionCount].correct) {
     userOption.classList.add("correct");
     scoreCount++;
@@ -139,9 +155,25 @@ function checker(userOption) {
       }
     });
   }
+// Timer countdown//
+const startingTime = 1;
+let time = startingTime * 60;
+
+setInterval(updateTimer, 1000);
+
+function updateTimer() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    seconds = seconds <10 ? '0' +seconds : seconds;
+
+    TimerEl.innerHTML = `${minutes}:${seconds}`;
+    time--;
+}
 
   //clear interval(stop timer)//
   clearInterval(countdown);
+
   //disable all options//
   options.forEach((element) => {
     element.disabled = true;
