@@ -1,132 +1,119 @@
 * {
-    padding:.1px;
-    margin:.1px;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    font-family:"Poppins",sans-serif;
-
-
-}
-body{
-    background-color: rgba(6, 1, 100, 0.871);
-}
-.start-screen, .score-container{
-    position:absolute;
-    top:20px;
-    left: 20px;
-    width:100%;
-    display:flex;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    background-color: wheat;
+  }
+  .start-screen,
+  .score-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-
-}
-.header{
+  }
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  #start-button,
+  #restart {
+    font-size: 1.3em;
+    padding: 0.5em 1.8em;
+    border-radius: 0.2em;
+  }
+  #restart {
+    margin-top: 0.9em;
+  }
+  #display-container {
+    background-color: #ffffff;
+    padding: 3.1em 1.8em;
+    width: 80%;
+    max-width: 37em;
+    margin: 0 auto;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 0.7em;
+  }
+  .header {
     margin-bottom: 1.7em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom:.6em;
-    border-bottom: .1em solid rgba(223, 208, 208, 0.687);
-    
-
-}
-
-#next-button {
-    border: none;
-    outline: none;  
-    cursor: pointer;
-
-}
-
-#start-button, #Restart {
-    font-size: 1.1em;
-    border-right: 1em;
-    padding:.5em 1.3em;
-    cursor: pointer;
-    color: black;
-    background-color: aquamarine;
-    border-radius: .7em;
-    font-weight: bold;
-
-}
-#display-container{
-    background-color: aliceblue;
-    padding: 3em 1.7em;
-    width:75%;
-    max-width: 37em;
-    margin: 0;  
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top:50%;
-    left:50%;
-    border-radius: 0.6em;
-
-}
-.timer-div{
-    background-color: aquamarine;
-    width: 5.5em;
-    border-radius: 1.3em;
+    padding-bottom: 0.7em;
+    border-bottom: 0.2em solid #c0bfd2;
+  }
+  .timer-div {
+    background-color: wheat;
+    width: 7.6em;
+    border-radius: 1.7em;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: .3em .6em;
-    font-weight:bold
-}
-#next-button {
-    font-size:1em ;
-    margin-top: 1.5em;
-    background-color: aquamarine;
-    color: black;
-    padding: .6em 1.3em;
-    border-radius: .8em;
-    float:right;
+    padding: 0.6em 1.9em;
+  }
+.time-left{
     font-weight: bold;
-    
- 
-}
-.hide{
-    display: none;
-}
-#User-Score{
-    font-size: 1.3em;
-    color:aquamarine;
-}
+    display: flex;
+    align-self: center;
 
- 
-.popquiz{
-    color:aquamarine;
-    font-size: 2em;
-    padding-right:5px;
-    padding: 10px;
-    font-weight: bold;
-    
 }
 .number-of-question{
-    color: aquamarine;
-    padding: 11px;
-    font-size: 1.3em;
+    font-weight: bold;
 
 }
-.question {
-    margin-bottom: 1.24em;
-    font-size:100%;
-    padding:1em;
-    margin:.25em 0;
+  
+  .question {
+    margin-bottom: 1.25em;
+    font-weight: 600;
+  }
+  .option-div {
+    font-size: 0.9em;
+    width: 100%;
+    padding: 1em;
+    margin: 0.3em 0;
     text-align: left;
     outline: none;
-    background:transparent;
-    border: 2px solid wheat;
-    border: .3em;
-}
-.option-div:disable{
+    background: transparent;
+    border: 1px solid #c0bfd2;
+    border-radius: 0.3em;
+  }
+  .option-div:disabled {
+    color: #000000;
+    cursor: not-allowed;
+  }
+  #next-button {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 1.5em;
+    background-color:wheat;
     color: black;
-    cursor: pointer;
-}
-
-#user-score {
+    padding: 0.6em 1.9em;
+    border-radius: 0.4em;
+    float: right;
+  }
+  .hide {
+    display: none;
+  }
+  .incorrect {
+    background-color: #ffdde0;
+    color: #d32f2f;
+    border-color: #d32f2f;
+  }
+  .correct {
+    background-color: #e7f6d5;
+    color: #689f38;
+    border-color: #689f38;
+  }
+  #user-score {
     font-size: 1.5em;
-
-}
-
-
+    color: #ffffff;
+  }
