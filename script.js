@@ -14,6 +14,7 @@ let scoreCount = 0;
 let count = 15;
 let countdown;
 const TimerEl = document.getElementById("Timer");
+
 //Questions and Options array//
 
 const quizArray = [
@@ -29,7 +30,7 @@ const quizArray = [
 {
     id: "3",
  question:"What happened to Dinosaurs?" ,
- options:["They playing hide and seek", "They were extinct","Starve to death","T-Rex ate them all"], correct:"They were extint",
+ options:["They playing hide and seek", "They were extinct","Starve to death","T-Rex ate them all"], correct:"They were extinct",
 },
 {
     id: "4",
@@ -49,20 +50,26 @@ restart.addEventListener("click", () => {
 nextBtn.addEventListener(
   "click",
   (displayNext = () => {
+
     //increment questionCount//
     questionCount += 1;
+
     //if last question//
     if (questionCount == quizArray.length) {
+
       //hide question container and display score//
       displayContainer.classList.add("hide");
       scoreContainer.classList.remove("hide");
+
       //user score//
       userScore.innerHTML =
         "Your score is " + scoreCount + " out of " + questionCount;
     } else {
+
       //display questionCount//
       countOfQuestion.innerHTML =
         questionCount + 1 + " of " + quizArray.length + " Question";
+
       //display quiz//
       quizDisplay(questionCount);
       count = 15;
@@ -84,27 +91,28 @@ const timerDisplay = () => {
   }, 1000);
 };
 
-//Display quiz//
+// Display quiz //
 const quizDisplay = (questionCount) => {
   let quizCards = document.querySelectorAll(".container-mid");
-  //Hide other cards//
+
+  // Hide other cards //
   quizCards.forEach((card) => {
     card.classList.add("hide");
   });
-  //display current question card//
+  // display current question card //
   quizCards[questionCount].classList.remove("hide");
 };
 
 //Quiz Creation//
 function quizCreator() {
 
-  //randomly sort questions//
+  // randomly sort questions //
   quizArray.sort(() => Math.random() - 0.5);
 
-  //generate quiz//
+  // generate quiz //
   for (let i of quizArray) {
 
-    //randomly sort options//
+    // randomly sort options //
     i.options.sort(() => Math.random() - 0.5);
 
     //quiz card creation//
@@ -121,9 +129,24 @@ function quizCreator() {
     div.appendChild(question_DIV);
 
     // score //
-    const SCORE_POINTS = 100
-    const MAX_QUESTIONS = 3
 
+    const SCORE_OINTS = 100
+    const MAX_QUESTION = 4
+
+    startGame = () => {
+        questionCounter = 0
+        score = 0
+        availableQuestions = [...questions]
+        getNewQuestion()
+
+    }
+
+    getNewQuestion = () => {
+        if (availableQuestions.length === 0 || questionsCounter > MAX_QUESTION) { localStorage.setItem('mostRecenScore', score)
+
+        }
+
+    }
     // options //
     div.innerHTML += `
     <button class="option-div" onclick="checker(this)">${i.options[0]}</button>
