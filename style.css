@@ -70,7 +70,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: .3em 1em
+    padding: .3em .6em;
+    font-weight:bold
 }
 #next-button {
     font-size:1em ;
@@ -80,9 +81,7 @@ body{
     padding: .6em 1.3em;
     border-radius: .8em;
     float:right;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    font-weight: bold;
     
  
 }
@@ -109,3 +108,25 @@ body{
     font-size: 1.3em;
 
 }
+.question {
+    margin-bottom: 1.24em;
+    font-size:100%;
+    padding:1em;
+    margin:.25em 0;
+    text-align: left;
+    outline: none;
+    background:transparent;
+    border: 2px solid wheat;
+    border: .3em;
+}
+.option-div:disable{
+    color: black;
+    cursor: pointer;
+}
+
+#user-score {
+    font-size: 1.5em;
+
+}
+
+

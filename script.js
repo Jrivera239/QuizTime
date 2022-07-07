@@ -6,7 +6,7 @@ let countOfQuestion = document.querySelector("number-of-question");
 let displayContainer = document.getElementById("display-container");
 let scoreContainer= document.querySelector(".score-container");
 let restart = document.getElementById("restart");
-let userScore = document.getElementById("user-score");
+let userScore = document.getElementById("User-Score");
 let startScreen = document.getElementById ("start-screen");
 let startButton = document.getElementById ("start-button");
 let questionCount;
@@ -32,8 +32,32 @@ const quizArray = [{id: "0",
 },
 ];
 
+//Time//
+const timerDisplay = () => {
+    countdown = setInterval (() => {
+        count--;
+        timeLeft.innerHTML = `${count}s`;
+        if (count == 0){
+            clearInterval(countdown);
+            displayNext();
+        }
+
+    }, 1000);
+}
+
+
 //    //
-const quizDisplay =(questionCount) => {}
+const quizDisplay =(questionCount) => {
+    let quizDisplay = document.querySelectorAll(".conainer_mid");
+// Hiding Cards//
+quizCards.forEach((card) => {
+    card.classList.add ("hide");
+
+});
+
+quizCards[questionCount].classList.remove("hide");
+
+}
 
 
 //Creation//
@@ -49,7 +73,7 @@ function quizCreator(){
         let div = document.createElement("div");
         div.classList.add("contaner-mid"; "hide");
         // //
-        countOfQuestion.innerHTML = 1+"of"+ quizArray.length+"Question";
+        countOfQuestion.innerHTML = 1+ " of "+ quizArray.length+" Question ";
         // //
         let question_DIV = document.createElement("p");
         question_DIV.classList.add("question");
@@ -61,9 +85,32 @@ function quizCreator(){
         <button class= "option-div" onclick="checker (this)">${i.options[0]}</button>
         <button class= "option-div" onclick="checker (this)">${i.options[1]}</button>
         <button class= "option-div" onclick="checker (this)">${i.options[2]}</button>
+        <button class= "option-div" onclick="checker (this)">${i.options[4]}</button>
         `;
         quizContainer.apprenChild(div);
     }
-})
+}
+// //
+function initial (){
+    quizContainer.innerHTML = "";
+    questionCount = 0;
+    scoreCount = 0;
+    count = 15;
+    quizCreator();
+    quizDisplay(questionCount);
+}
 
+// //
+startButton.addEventListener("click",() => {
+    startScreen.classList.add("hide");
+    startScreen.classList.remove 
+    initial ();
+}
+// hiding quiz and display//
+
+window.onload = () => {
+    
+    displayContainer.classList.add ('hide');
+ 
+});
 
