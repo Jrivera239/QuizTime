@@ -1,55 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-
+  <head></head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quick Quiz</title>
-
-    <!-- google font -->
-
+    <!-- font -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-
+      href="https://fonts.googleapis.com/css?family=Tangerine"
+      rel="stylesheet"/>
     <!-- stylesheet -->
-
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-
     <div class="start-screen">
-      <button id="start-button">Start</button>
+      <button id="start-Quiz">Start Quiz</button>
     </div>
-
     <div id="display-container">
       <div class="header">
-        <div class="number-of-count">
+        <div class="Number1">
           <span class="number-of-question">1 of 4 Questions</span>
         </div>
-
+        <!-- Time-->
         <div class="timer-div">
-          <span class="time-left">15s</span>
-          <i class="fa-thin fa-timer"></i>
+          <span class="time-left">60s</span>
+          <i class="fa-solid fa-alarm-clock"></i>
         </div>
       </div>
       <div id="container">
-
-        <!-- questions and options -->
       </div>
-
       <button id="next-button">Next</button>
     </div>
-
+ 
     <div class="score-container hide">
       <div id="user-score">Score</div>
-      <button id="restart">Restart</button>
+      <button id="restart">Start Over</button>
     </div>
-<!-- score -->
-
     <!-- script -->
-
     <script src="script.js"></script>
   </body>
 </html>
